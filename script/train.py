@@ -5,9 +5,9 @@ from sklearn.metrics import classification_report
 import numpy as np
 import mlflow
 
-mlflow.set_tracking_uri(uri="http://127.0.0.1:8088")
-mlflow.set_experiment("dpe_forever")
-mlflow.autolog()
+# mlflow.set_tracking_uri(uri="http://127.0.0.1:8088")
+# mlflow.set_experiment("dpe_forever")
+# mlflow.autolog()
 
 """
 [Q]

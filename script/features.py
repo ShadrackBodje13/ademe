@@ -223,7 +223,24 @@ if __name__ == "__main__":
         data[col].fillna(-1, inplace=True)
         data[col] = data[col].astype(int)
 
-    target_encoding = {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7}
+#----------------------------------------------------
+# Erreur avec presence de I dans etiquette_dpe.
+    # print(data['etiquette_dpe'].unique())
+    # print(data['etiquette_dpe'].value_counts())
+    # Ce que je peux faire, c'est soit rajouter le I soit supprimer le I
+    
+    # Si je supprime alors : # Supprimer 'I' du dictionnaire target_encoding
+
+# ------------------------------------------------------
+
+
+    # J'ai rajouté I (Action actuelle qui me crée dans Data mon fichier dpe_tertiaire_20240307)
+    target_encoding = {"A": 1, "B": 2, "C": 3, "D": 4, "E": 5, "F": 6, "G": 7, "I":8}
+    
+    # Suppression du I
+    # if 'I' in target_encoding:
+    #     del target_encoding['I']
+    
     data[target] = data[target].apply(lambda d: target_encoding[d])
 
     features = [
